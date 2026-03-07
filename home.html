@@ -2,10 +2,123 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=p, initial-scale=1.0">
+
+    <!-- dasy ui -->
+    <!-- dasy ui -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google font -->
+    <!-- Google font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+     <!-- font awsum -->
+     <!-- font awsum -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>GitHub Issues Tracker</title>
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+
+    <style>
+        *{
+            font-family: "Geist", sans-serif;
+        }
+    </style>
 </head>
-<body>
-    HOME
+<body class="bg-base-200 min-h-screen" >
+    <nav>
+        <div class="navbar bg-base-100 shadow-sm px-10" >
+  <div class="flex-1 flex gap-3">
+   <img class="w-[36px] h-[36px]" src="./assets/github-logo.png" alt="">
+   <h1 class="flex items-center text-[24px] font-semibold">GitHub Issues Tracker</h1>
+  </div>
+  <div class="flex gap-2">
+    <i class="fa-thin fa-magnifying-glass"></i>
+    <input   type="text" placeholder="Search issues..." class="input input-bordered w-[300px] h-[44px]  " />
+       <div>
+        <button class="btn btn-active btn-primary w-[131px] h-[44px]"><span><i class="fa-solid fa-plus"></i></span><span>New Issue</span></button>
+         
+        </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    <br>
+    <br>
+    <br>
+
+
+    <main class="w-[1110px]  mx-auto">
+
+        <!-- বাটন -->
+        <!-- বাটন -->
+        <div class="navbar bg-base-100 shadow-sm p-5 gap-3">
+        <button class="btn btn-primary w-[120px] h-[40px] ">All</button>
+        <button class="btn btn-white w-[120px] h-[40px]">Open</button>
+        <button class="btn btn-white w-[120px] h-[40px]">Closed</button>
+         </div>
+         <br>
+
+         <!-- বাটন এর পরের অংশ -->
+         <!-- বাটন এর পরের অংশ -->
+          <div class="navbar bg-base-100 shadow-sm p-5 gap-3 flex justify-between">
+            <div class="flex gap-3 items-center">
+                <img class="w-[32px] h-[32px]" src="./assets/Aperture.png"alt="">
+                <div>
+                    <h1 class="text-[20px] font-semibold">50 Issues </h1>
+                <p class="text-[16px] text-[#64748B]"> Track and manage your project issues</p>
+                </div>
+
+            </div>
+           <div class="flex items-center gap-3">
+
+         <div class="flex items-center gap-2">
+                <div class="badge badge-primary badge-xs"></div>
+                <p class="text-[16px]">Open</p>
+
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="badge badge-secondary badge-xs"></div>
+                <p class="text-[16px]">Closed</p>
+
+            </div>
+           </div>
+   
+         </div>
+         <hr class="border-base-300">
+
+         <!-- কার্ড সেকশন -->
+         <!-- কার্ড সেকশন -->
+           <div class=" bg-base-200 shadow-sm p-5 gap-3 flex justify-between w-[1110px] grid grid-cols-2 sm:grid-cols-4">
+             <div class=" bg-base-100 shadow-sm p-1 gap-3 w-[256px] h-[253px] p-3 space-y-4 ">
+                <div class="flex justify-between items-center gap-24 ">
+                    <img src="./assets/Open-Status.png" alt="">
+                    <p class="bg-red-100 border-red-500 text-red-400 w-[80px] h-[24px] text-center rounded-full">HIGH</p>
+                </div>
+                <div>
+                    <h2 class="text-[#1F2937]">Fix navigation menu on mobile <br> devices</h2>
+                    <p class="line-clamp-2 text-[12px] text-[#64748B]">The navigation menu doesn't collapse properly on mo bile devices saf;kln;f sljs;lfj;saljf okslsfjl;sfjl;fsj</p>
+                    
+                    <div class="flex mt-2 space-x-1">
+                         <p class="bg-red-100 border-red-500 text-[#EF4444] w-[56px] h-[24px] text-[12px] text-center rounded-full flex items-center justify-center gap-1"><span class="w-[12px] h-[12px] flex justify-center items-center"><img src="./assets/BugDroid.png" alt=""></span><span>BUG</span></p>
+                         <p class="bg-[#fde68a67] border-red-500 text-[#D97706] w-[112px] h-[24px] text-[12px] text-center rounded-full flex items-center justify-center gap-1 "><span><img src="./assets/Vector.png" alt=""></span><span>HELP WANTED</span></p>
+                    </div>
+                    <br>
+                    <hr class="border-base-300">
+                    <div class="mt-3">
+                        <p class="text-[#64748B] text-[12px]">#1by john_doe</p>
+                        <p class="text-[#64748B] text-[12px]">1/15/2024</p>
+
+                    </div>
+                </div>
+
+             </div>
+
+           </div>
+
+
+    </main>
 </body>
 </html>

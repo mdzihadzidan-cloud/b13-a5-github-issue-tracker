@@ -4,6 +4,7 @@
 let Allissus = []
 
 const CardContainer = document.getElementById("CardContainer");
+const Issues50= document.getElementById("Issues50");
 
 async function loadCard(){
     const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
@@ -41,6 +42,12 @@ function displayCard(Card){
                     </div>
                 </div> `
 
+             if(SingleCard.status === "open"){
+            cards.classList.add("border-t-4", "border-indigo-600")
+             }else{
+            cards.classList.add("border-t-4", "border-pink-400")
+             }
+
     CardContainer.appendChild(cards);
     })
 }
@@ -71,6 +78,8 @@ btn1.addEventListener("click",function(){
    CardContainer.innerHTML= " ";
     displayCard(Allissus);
 
+    Issues50.innerText = "50 Issues"
+
 
 })
 
@@ -95,6 +104,9 @@ btn2.addEventListener("click",function(){
     CardContainer.innerHTML= " ";
   displayCard(openCards);
 
+
+  Issues50.innerText = "44 Issues"
+
 })
 
 // বাটন3
@@ -117,4 +129,6 @@ btn3.addEventListener("click",function(){
 
     CardContainer.innerHTML= " ";
   displayCard(closeCards);
+
+  Issues50.innerText = "6 Issues"
 })

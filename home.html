@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=p, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- dasy ui -->
     <!-- dasy ui -->
@@ -55,9 +55,9 @@
         <!-- বাটন -->
         <!-- বাটন -->
         <div class="navbar bg-base-100 shadow-sm p-5 gap-3">
-        <button class="btn btn-primary w-[120px] h-[40px] ">All</button>
-        <button class="btn btn-white w-[120px] h-[40px]">Open</button>
-        <button class="btn btn-white w-[120px] h-[40px]">Closed</button>
+        <button id="btn1"  class="btn btn-primary w-[120px] h-[40px] ">All</button>
+        <button id="btn2"  class="btn btn-white w-[120px] h-[40px]">Open</button>
+        <button id="btn3"  class="btn btn-white w-[120px] h-[40px]">Closed</button>
          </div>
          <br>
 
@@ -91,8 +91,8 @@
 
          <!-- কার্ড সেকশন -->
          <!-- কার্ড সেকশন -->
-           <div class=" bg-base-200 shadow-sm p-5 gap-3 flex justify-between w-[1110px] grid grid-cols-2 sm:grid-cols-4">
-             <div class=" bg-base-100 shadow-sm p-1 gap-3 w-[256px] h-[253px] p-3 space-y-4 ">
+           <div id="CardContainer" class=" bg-base-200 shadow-sm p-5 gap-3 flex justify-between w-[1110px] grid grid-cols-2 sm:grid-cols-4">
+             <!-- <div class=" bg-base-100 shadow-sm p-1 gap-3 w-[256px] h-[253px] p-3 space-y-4 ">
                 <div class="flex justify-between items-center gap-24 ">
                     <img src="./assets/Open-Status.png" alt="">
                     <p class="bg-red-100 border-red-500 text-red-400 w-[80px] h-[24px] text-center rounded-full">HIGH</p>
@@ -114,9 +114,12 @@
                     </div>
                 </div>
 
-             </div>
+             </div> -->
 
            </div>
+
+
+           <script src="./home.js"></script>
 
 
     </main>

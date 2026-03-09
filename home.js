@@ -5,13 +5,28 @@ let Allissus = []
 
 const CardContainer = document.getElementById("CardContainer");
 const Issues50= document.getElementById("Issues50");
+const loding = document.getElementById("loding");
+
+function showLoding (){
+  loding.classList.remove("hidden")
+  CardContainer.innerHTML = "";
+}
+
+function hidingLoding (){
+  loding.classList.add("hidden");
+}
+
 
 async function loadCard(){
+  
+      showLoding ()
     const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     const data = await res.json();
+    hidingLoding ()
     Allissus= data.data;
     displayCard(Allissus)
 }
+
 
 
 function displayCard(Card){
@@ -160,8 +175,10 @@ function opentreedetailsmodal(id){
 // মডাল এর API এর ফাংশন
 
 async function ModalCard(id){
+    //  showLoding ()
     const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
     const data = await res.json();
+    // hidingLoding ()
 
     const issue = data.data;
 
@@ -263,6 +280,7 @@ Search.addEventListener("keyup", function () {
 
 
 async function SearchIssue() {
+   showLoding ()
 
   const searchText = Search.value;
 
@@ -283,10 +301,9 @@ async function SearchIssue() {
 
     const issues = data.data;
 
-    // নতুন card show
+  
     displayCard(issues);
 
-    // issue count update
     Issues50.innerText = issues.length + " Issues";
 
   } catch (error) {
@@ -294,7 +311,7 @@ async function SearchIssue() {
     console.log("Search error:", error);
 
   }
-
+hidingLoding ()
 }
 
 

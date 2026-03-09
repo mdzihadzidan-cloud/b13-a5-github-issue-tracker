@@ -222,6 +222,81 @@ function displayModalCard(issue){
 
 
 
+// সার্চ বার
+// সার্চ বার
+// সার্চ বার
+
+
+
+
+// const NewIssuebtn = document.getElementById("NewIssuebtn").addEventListener("click",function(){
+
+              
+// })
+
+// const Search= document.getElementById("Search");
+
+// async function SearchNewIssuebtn(){
+
+//     const searchText = document.getElementById("Search").value;
+//     const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
+//     const data = await res.json();   
+
+//     const issue = data.data;
+//     console.log(issue)
+
+//     // SearchNewIssuebtn()
+// }
+
+
+
+
+// সার্চ বার
+// সার্চ বার
+
+const Search = document.getElementById("Search");
+
+
+Search.addEventListener("keyup", function () {
+  SearchIssue();
+});
+
+
+async function SearchIssue() {
+
+  const searchText = Search.value;
+
+
+  if (searchText === "") {
+    displayCard(Allissus);
+    Issues50.innerText = Allissus.length + " Issues";
+    return;
+  }
+
+  try {
+
+    const res = await fetch(
+      `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`
+    );
+
+    const data = await res.json();
+
+    const issues = data.data;
+
+    // নতুন card show
+    displayCard(issues);
+
+    // issue count update
+    Issues50.innerText = issues.length + " Issues";
+
+  } catch (error) {
+
+    console.log("Search error:", error);
+
+  }
+
+}
+
 
 
 
